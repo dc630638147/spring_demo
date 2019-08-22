@@ -61,6 +61,9 @@ public class AfBeanDefinitionReader {
         }
     }
 
+    public Properties getConfig(){
+        return config;
+    }
 
     public List<AfBeanDefinition> loadBeanDefinition() {
         List<AfBeanDefinition> list = new ArrayList<>();

@@ -12,6 +12,8 @@ import com.af.formework.beans.supports.AfDefaultListableBeanFactory;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -143,6 +145,12 @@ public class AfApplicationContext extends AfDefaultListableBeanFactory implement
         return instance;
     }
 
+
+    public String [] getBeanNames(){
+        Set<String> strings = this.beanDefinitionMap.keySet();
+        return strings.toArray(new String[strings.size()]);
+    }
+
     private String toLowerFirstCase(String simpleName) {
         char[] chars = simpleName.toCharArray();
         //之所以加，是因为大小写字母的ASCII码相差32，
@@ -150,5 +158,9 @@ public class AfApplicationContext extends AfDefaultListableBeanFactory implement
         //在Java中，对char做算学运算，实际上就是对ASCII码做算学运算
         chars[0] += 32;
         return String.valueOf(chars);
+    }
+
+    public Properties getConfig(){
+        return this.reader.getConfig();
     }
 }
