@@ -5,6 +5,6 @@ package com.af.formework.context.supports;
  */
 public abstract class AFAbstractApplicationContext {
 
-    //受保护，只提供子类重写
-    protected void refresh(){}
+
+    public void refresh(){}
 }

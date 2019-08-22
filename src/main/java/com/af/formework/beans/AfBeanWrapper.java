@@ -1,7 +1,16 @@
 package com.af.formework.beans;
 
+import lombok.Data;
+
 /**
- * Created by Administrator on 2019/8/21.
+ * AF
  */
+@Data
 public class AfBeanWrapper {
+    private Object wrapperInstance;
+    private Class<?> wrappedClass;
+
+    public AfBeanWrapper(Object wrapperInstance) {
+        this.wrapperInstance = wrapperInstance;
+    }
 }

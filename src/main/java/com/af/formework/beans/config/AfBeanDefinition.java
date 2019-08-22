@@ -8,6 +8,6 @@ import lombok.Data;
 @Data
 public class AfBeanDefinition {
     private String beanClassName;
-    private boolean lazyInit = false;
+    private boolean lazyInit = true;
     private String  factoryBeanName;
 }
